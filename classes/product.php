@@ -30,5 +30,12 @@ class Product {
     public function getImage(): string {
         return $this->image;
     }
+
+    public function setPrice(float $price) {
+        if ($price = 0 || $price < 0) {
+            throw new Exception("Prezzo non valido");
+        }
+        $this-> price = $price;
+    }
 }
 ?>
